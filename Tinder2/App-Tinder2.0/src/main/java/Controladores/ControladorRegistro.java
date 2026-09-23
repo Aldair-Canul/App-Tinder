@@ -20,7 +20,6 @@ public class ControladorRegistro {
     @FXML private PasswordField pwdConfirmar;
     @FXML private CheckBox chkTerminos;
 
-    // === Se ejecuta DESPUÉS de que FXML inyecta los componentes ===
     @FXML
     private void initialize() {
         // Opciones del ComboBox
@@ -43,7 +42,6 @@ public class ControladorRegistro {
         });
     }
 
-    // === Método que se ejecuta al presionar "Crear Cuenta" ===
     @FXML
     private void crearCuenta() {
         // Validaciones
@@ -67,14 +65,16 @@ public class ControladorRegistro {
             alertError("Debes aceptar los términos y condiciones.");
             return;
         }
+        if (pwdContraseña.getText().isEmpty()) {
+            alertError("La contraseña es obligatoria.");
+            return;
+        }
         if (!pwdContraseña.getText().equals(pwdConfirmar.getText())) {
             alertError("Las contraseñas no coinciden.");
             return;
         }
 
-        // Aquí creas tu objeto y "guardas" el registro
-        // (por ahora solo imprime en consola)
-        System.out.println("=== Registro exitoso ===");
+        System.out.println(" Registro exitoso ");
         System.out.println("Nombre: " + txtNombre.getText() + " " + txtApellidos.getText());
         System.out.println("Correo: " + txtCorreo.getText());
         System.out.println("Edad: " + txtEdad.getText());
