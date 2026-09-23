@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.time.Period;
 
 public class ControladorRegistro {
-    
+
     @FXML private TextField txtNombre;
     @FXML private TextField txtApellidos;
     @FXML private TextField txtCorreo;

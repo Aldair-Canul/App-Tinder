@@ -18,7 +18,7 @@
                   <Font size="22.0" />
                </font>
             </Label>
-            <Label layoutX="26.0" layoutY="82.0" prefHeight="18.0" prefWidth="111.0" text="Nombre de usuario:" />
+            <Label layoutX="26.0" layoutY="82.0" prefHeight="18.0" prefWidth="111.0" text="Correo:" />
             <TextField fx:id="txtUsuario" layoutX="26.0" layoutY="107.0" prefHeight="26.0" prefWidth="329.0" />
             <Label layoutX="26.0" layoutY="146.0" text="Contraseña:" />
             <PasswordField fx:id="pwdContraseña" layoutX="26.0" layoutY="164.0" prefHeight="26.0" prefWidth="330.0" />
