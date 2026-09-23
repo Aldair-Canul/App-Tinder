@@ -2,16 +2,18 @@ package Tinder2;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import java.io.IOException;
 
 public class main extends Application {
+
     @Override
-    public void start(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vistas/CrearCuenta.fxml"));
-        Scene scene = new Scene(loader.load(), 600, 470);
-        stage.setTitle("Tinder 2");
-        stage.setScene(scene);
+    public void start(Stage stage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/Vistas/iniciarSesion.fxml"));
+        stage.setTitle("Tinder 2.0");
+        stage.setScene(new Scene(root));
         stage.show();
     }
 
