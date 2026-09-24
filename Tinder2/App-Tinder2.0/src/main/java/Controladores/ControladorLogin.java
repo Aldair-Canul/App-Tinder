@@ -31,7 +31,7 @@ public class ControladorLogin {
 
     @FXML
     private void irARegistro(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/Vistas/CrearCuenta.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/Vistas/CrearCuenta1.1.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();

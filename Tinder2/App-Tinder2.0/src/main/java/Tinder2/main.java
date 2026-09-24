@@ -11,7 +11,7 @@ public class main extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/Vistas/iniciarSesion.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/Vistas/iniciarsesion.fxml"));
         stage.setTitle("Tinder 2.0");
         stage.setScene(new Scene(root));
         stage.show();
