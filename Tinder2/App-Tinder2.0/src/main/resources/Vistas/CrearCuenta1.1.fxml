@@ -8,10 +8,17 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="496.0" prefWidth="600.0" style="-fx-background-color: pink;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.ControladorRegistro">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="496.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.ControladorRegistro">
    <children>
-      <AnchorPane layoutX="114.0" layoutY="18.0" prefHeight="461.0" prefWidth="383.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;">
+      <ImageView fitHeight="496.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="false">
+         <image>
+            <Image url="@../Imagenes/fondo.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="114.0" layoutY="18.0" prefHeight="461.0" prefWidth="383.0" style="-fx-background-color: rgba(255, 255, 255, 0.8);; -fx-background-radius: 20;">
          <children>
             <Label layoutX="136.0" layoutY="14.0" text="TINDER 2">
                <font>
