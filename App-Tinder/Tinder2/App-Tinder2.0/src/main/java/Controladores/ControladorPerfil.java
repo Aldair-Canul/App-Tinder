@@ -15,26 +15,17 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 
-
 public class ControladorPerfil {
-
-    // ==================== CAMPOS FXML ====================
 
     @FXML private ImageView imgFoto;
     @FXML private TextField txtApodo;
     @FXML private ComboBox<String> cbGenero;
     @FXML private TextArea txtDescripcion;
 
-
-    // ==================== INICIALIZACIÓN ====================
-
     @FXML
     private void initialize() {
-        cbGenero.getItems().addAll("Hombre", "Mujer", "Otro" , "Prefiero no decirlo");
+        cbGenero.getItems().addAll("Hombre", "Mujer", "Otro");
     }
-
-
-    // ==================== ACCIÓN: AGREGAR FOTO ====================
 
     @FXML
     private void agregarFoto() {
@@ -47,9 +38,6 @@ public class ControladorPerfil {
             imgFoto.setImage(new Image(archivo.toURI().toString()));
         }
     }
-
-
-    // ==================== ACCIÓN: CONTINUAR A INTERESES ====================
 
     @FXML
     private void irSiguiente(ActionEvent event) throws IOException {

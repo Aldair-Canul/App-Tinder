@@ -13,37 +13,21 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import java.io.IOException;
 
-//==================== CONTROLADOR: PANTALLA DE INICIO DE SESIÓN ====================
-
 public class ControladorLogin {
-
-    // ==================== CAMPOS FXML ====================
 
     @FXML private TextField txtUsuario;
     @FXML private PasswordField pwdContraseña;
 
-
-    // ==================== ACCIÓN: INICIAR SESIÓN ====================
-
-
     @FXML
-    private void iniciarSesion(ActionEvent event) throws IOException {
+    private void iniciarSesion(ActionEvent event) {
         if (txtUsuario.getText().isEmpty() || pwdContraseña.getText().isEmpty()) {
             Alert alert = new Alert(AlertType.WARNING);
             alert.setTitle("Error");
             alert.setHeaderText(null);
             alert.setContentText("Usuario y contraseña son obligatorios.");
             alert.showAndWait();
-            return;
         }
-        Parent root = FXMLLoader.load(getClass().getResource("/Vistas/MainDashboardView.fxml"));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.show();
     }
-
-
-    // ==================== ACCIÓN: IR A REGISTRO ====================
 
     @FXML
     private void irARegistro(ActionEvent event) throws IOException {

@@ -14,26 +14,16 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-
- //==================== CONTROLADOR: PANTALLA DE INTERESES ====================
 public class ControladorIntereses {
-
-    // ==================== CAMPOS FXML: NAVEGACIÓN ====================
 
     @FXML private Button btnAtras;
     @FXML private Button btnSiguiente;
-
-
-    // ==================== CAMPOS FXML: INTERESES POR CATEGORÍA ====================
 
     @FXML private ToggleButton tbConciertos, tbKaraoke, tbProduccionMusical;
     @FXML private ToggleButton tbSeries, tbAnime, tbPeliculas, tbPodcasts;
     @FXML private ToggleButton tbFutbol, tbCiclismo, tbBasquetball, tbNatacion;
     @FXML private ToggleButton tbArte, tbTeatro, tbHistoria, tbDanza;
     @FXML private ToggleButton tbAnimales, tbJardineria, tbGaming;
-
-
-    // ==================== INICIALIZACIÓN ====================
 
     @FXML
     private void initialize() {
@@ -42,8 +32,6 @@ public class ControladorIntereses {
         btnAtras.setVisible(esRegistroNuevo);
     }
 
-
-    // ==================== ACCIÓN: VOLVER A PERFIL ====================
     @FXML
     private void irAtras(ActionEvent event) throws IOException {
         if (!Sesion.configurandoPerfilNuevo) return;
@@ -54,23 +42,17 @@ public class ControladorIntereses {
         stage.show();
     }
 
-
-    // ==================== ACCIÓN: CONTINUAR AL DASHBOARD ====================
-
     @FXML
     private void irSiguiente(ActionEvent event) throws IOException {
         List<String> seleccionados = obtenerInteresesSeleccionados();
 
         Sesion.configurandoPerfilNuevo = false;
 
-        Parent root = FXMLLoader.load(getClass().getResource("/Vistas/MainDashboardView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/Vistas/SiguienteVista.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();
     }
-
-
-    // ==================== UTILIDAD: RECOLECTAR INTERESES ====================
 
     private List<String> obtenerInteresesSeleccionados() {
         List<String> lista = new ArrayList<>();
