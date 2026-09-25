@@ -48,7 +48,7 @@ public class ControladorIntereses {
 
         Sesion.configurandoPerfilNuevo = false;
 
-        Parent root = FXMLLoader.load(getClass().getResource("/Vistas/SiguienteVista.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/Vistas/MainDashboardView.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();

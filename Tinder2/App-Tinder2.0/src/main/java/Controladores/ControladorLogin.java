@@ -19,14 +19,19 @@ public class ControladorLogin {
     @FXML private PasswordField pwdContraseña;
 
     @FXML
-    private void iniciarSesion(ActionEvent event) {
+    private void iniciarSesion(ActionEvent event) throws IOException {
         if (txtUsuario.getText().isEmpty() || pwdContraseña.getText().isEmpty()) {
             Alert alert = new Alert(AlertType.WARNING);
             alert.setTitle("Error");
             alert.setHeaderText(null);
             alert.setContentText("Usuario y contraseña son obligatorios.");
             alert.showAndWait();
+            return;
         }
+        Parent root = FXMLLoader.load(getClass().getResource("/Vistas/MainDashboardView.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 
     @FXML
