@@ -12,6 +12,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.util.regex.Pattern;
 
 //==================== CONTROLADOR: PANTALLA DE INICIO DE SESIÓN ====================
 
@@ -20,7 +21,13 @@ public class ControladorLogin {
     // ==================== CAMPOS FXML ====================
 
     @FXML private TextField txtUsuario;
+    @FXML private TextField txtCorreo;
     @FXML private PasswordField pwdContraseña;
+
+    // ==================== PATRÓN DE VALIDACIÓN ====================
+    // (mínimo 2 letras en la extensión)
+    private static final Pattern PATRON_CORREO =
+            Pattern.compile("^[\\w.+-]+@[\\w-]+\\.[a-zA-Z]{2,}$");
 
 
     // ==================== ACCIÓN: INICIAR SESIÓN ====================
@@ -31,6 +38,13 @@ public class ControladorLogin {
             alertError("Usuario y contraseña son obligatorios.");
             return;
         }
+
+        // --- Validación: formato de correo válido ---
+        if (!PATRON_CORREO.matcher(txtCorreo.getText()).matches()) {
+            alertError("Ingresa un correo electrónico válido (ejemplo: usuario@dominio.com).");
+            return;
+        }
+
         cambiarVista(event, "/Vistas/MainDashboardView.fxml");
     }
 
