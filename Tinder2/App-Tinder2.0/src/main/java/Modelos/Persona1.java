@@ -3,7 +3,10 @@ package Modelos;
 import java.time.LocalDate;
 
 public class Persona1 {
-    private String nombre;
+
+    // ==================== ATRIBUTOS ====================
+
+    private String nombre;             
     private String apellidos;
     private String correo;
     private int edad;
@@ -12,7 +15,9 @@ public class Persona1 {
     private LocalDate fechaNacimiento;
     private String contrasena;
 
-    // Constructor
+
+    // ==================== CONSTRUCTOR ====================
+
     public Persona1(String nombre, String apellidos, String correo,
                     int edad, String codigoPostal, String genero,
                     LocalDate fechaNacimiento, String contrasena) {
@@ -26,7 +31,9 @@ public class Persona1 {
         this.contrasena = contrasena;
     }
 
-    // Getters
+
+    // ==================== GETTERS ====================
+
     public String getNombre() { return nombre; }
     public String getApellidos() { return apellidos; }
     public String getCorreo() { return correo; }

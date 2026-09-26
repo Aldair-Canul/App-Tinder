@@ -25,21 +25,13 @@ public class ControladorLogin {
 
     // ==================== ACCIÓN: INICIAR SESIÓN ====================
 
-
     @FXML
     private void iniciarSesion(ActionEvent event) throws IOException {
         if (txtUsuario.getText().isEmpty() || pwdContraseña.getText().isEmpty()) {
-            Alert alert = new Alert(AlertType.WARNING);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Usuario y contraseña son obligatorios.");
-            alert.showAndWait();
+            alertError("Usuario y contraseña son obligatorios.");
             return;
         }
-        Parent root = FXMLLoader.load(getClass().getResource("/Vistas/MainDashboardView.fxml"));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.show();
+        cambiarVista(event, "/Vistas/MainDashboardView.fxml");
     }
 
 
@@ -47,9 +39,27 @@ public class ControladorLogin {
 
     @FXML
     private void irARegistro(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/Vistas/CrearCuenta1.1.fxml"));
+        cambiarVista(event, "/Vistas/CrearCuenta1.1.fxml");
+    }
+
+
+    // ==================== UTILIDAD: CAMBIAR DE VISTA ====================
+
+    private void cambiarVista(ActionEvent event, String rutaFXML) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource(rutaFXML));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();
+    }
+
+
+    // ==================== UTILIDAD: ALERTA DE ERROR ====================
+
+    private void alertError(String msg) {
+        Alert alert = new Alert(AlertType.WARNING);
+        alert.setTitle("Error");
+        alert.setHeaderText(null);
+        alert.setContentText(msg);
+        alert.showAndWait();
     }
 }

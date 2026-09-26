@@ -30,7 +30,7 @@ public class ControladorPerfil {
 
     @FXML
     private void initialize() {
-        cbGenero.getItems().addAll("Hombre", "Mujer", "Otro" , "Prefiero no decirlo");
+        cbGenero.getItems().addAll("Hombre", "Mujer", "Otro", "Prefiero no decirlo");
     }
 
 
@@ -57,11 +57,22 @@ public class ControladorPerfil {
         System.out.println("Género: " + cbGenero.getValue());
         System.out.println("Descripción: " + txtDescripcion.getText());
 
-        // Marca que se está configurando el perfil por primera vez,
-        // así el botón "Atrás" de Intereses queda habilitado
-        Sesion.configurandoPerfilNuevo = true;
+        marcarConfiguracionInicialDePerfil();
+        cambiarVista(event, "/Vistas/Intereses.fxml");
+    }
 
-        Parent root = FXMLLoader.load(getClass().getResource("/Vistas/Intereses.fxml"));
+
+    // ==================== UTILIDAD: MARCAR ESTADO DE SESIÓN ====================
+
+    private void marcarConfiguracionInicialDePerfil() {
+        Sesion.configurandoPerfilNuevo = true;
+    }
+
+
+    // ==================== UTILIDAD: CAMBIAR DE VISTA ====================
+
+    private void cambiarVista(ActionEvent event, String rutaFXML) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource(rutaFXML));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();

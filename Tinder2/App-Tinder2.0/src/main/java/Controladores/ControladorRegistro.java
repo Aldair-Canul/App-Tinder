@@ -31,11 +31,12 @@ public class ControladorRegistro {
 
     @FXML
     private void initialize() {
+        LocalDate limite18 = LocalDate.now().minusYears(18);
+
         dpFecha.setDayCellFactory(picker -> new DateCell() {
             @Override
             public void updateItem(LocalDate date, boolean empty) {
                 super.updateItem(date, empty);
-                LocalDate limite18 = LocalDate.now().minusYears(18);
                 setDisable(empty || date.isAfter(limite18));
             }
         });
@@ -43,7 +44,6 @@ public class ControladorRegistro {
 
 
     // ==================== ACCIÓN: CREAR CUENTA ====================
-
 
     @FXML
     private void crearCuenta(ActionEvent event) throws IOException {
@@ -112,7 +112,14 @@ public class ControladorRegistro {
         ok.showAndWait();
 
         // Navega a la vista de Perfil para completarlo por primera vez
-        Parent root = FXMLLoader.load(getClass().getResource("/Vistas/Perfil.fxml"));
+        cambiarVista(event, "/Vistas/Perfil.fxml");
+    }
+
+
+    // ==================== UTILIDAD: CAMBIAR DE VISTA ====================
+
+    private void cambiarVista(ActionEvent event, String rutaFXML) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource(rutaFXML));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();

@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
- //==================== CONTROLADOR: PANTALLA DE INTERESES ====================
+//==================== CONTROLADOR: PANTALLA DE INTERESES ====================
 public class ControladorIntereses {
 
     // ==================== CAMPOS FXML: NAVEGACIÓN ====================
@@ -44,14 +44,11 @@ public class ControladorIntereses {
 
 
     // ==================== ACCIÓN: VOLVER A PERFIL ====================
+
     @FXML
     private void irAtras(ActionEvent event) throws IOException {
         if (!Sesion.configurandoPerfilNuevo) return;
-
-        Parent root = FXMLLoader.load(getClass().getResource("/Vistas/Perfil.fxml"));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.show();
+        cambiarVista(event, "/Vistas/Perfil.fxml");
     }
 
 
@@ -61,12 +58,8 @@ public class ControladorIntereses {
     private void irSiguiente(ActionEvent event) throws IOException {
         List<String> seleccionados = obtenerInteresesSeleccionados();
 
-        Sesion.configurandoPerfilNuevo = false;
-
-        Parent root = FXMLLoader.load(getClass().getResource("/Vistas/MainDashboardView.fxml"));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.show();
+        finalizarConfiguracionDePerfil();
+        cambiarVista(event, "/Vistas/MainDashboardView.fxml");
     }
 
 
@@ -87,5 +80,22 @@ public class ControladorIntereses {
             }
         }
         return lista;
+    }
+
+
+    // ==================== UTILIDAD: CERRAR ESTADO DE SESIÓN ====================
+
+    private void finalizarConfiguracionDePerfil() {
+        Sesion.configurandoPerfilNuevo = false;
+    }
+
+
+    // ==================== UTILIDAD: CAMBIAR DE VISTA ====================
+
+    private void cambiarVista(ActionEvent event, String rutaFXML) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource(rutaFXML));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 }
