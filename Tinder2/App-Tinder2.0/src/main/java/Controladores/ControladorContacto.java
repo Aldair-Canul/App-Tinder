@@ -38,15 +38,18 @@ public class ControladorContacto {
         System.out.println("Medio preferido: " + medio);
 
         // --- CAMBIAR A LA BANDEJA DE ENTRADA (InboxView.fxml) ---
-        Parent root = FXMLLoader.load(getClass().getResource("/Vistas/InboxView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/Vistas/MainDashboardView.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();
     }
 
     @FXML
-    private void onCancelar() {
-        txtMensaje.clear();
-        cbMedioContacto.getSelectionModel().clearSelection();
+    private void onCancelar(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/Vistas/MainDashboardView.fxml"));
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 }

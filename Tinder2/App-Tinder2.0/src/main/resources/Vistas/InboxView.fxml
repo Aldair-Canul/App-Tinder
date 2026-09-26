@@ -21,6 +21,9 @@
       </ImageView>
       <VBox layoutX="46.0" layoutY="14.0" prefHeight="356.0" prefWidth="549.0" style="-fx-background-color: rgba(255, 255, 255, 0.8); -fx-background-radius: 50;">
          <children>
+             <Button fx:id="btnVolver" mnemonicParsing="false" onAction="#volverDashboard" text="Volver" style="-fx-background-color: #FF5C8A;  -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-cursor: hand;">
+                 <VBox.margin> <Insets left="25.0" top="10.0" /> </VBox.margin>
+             </Button>
             <Label style="-fx-margin: 24px;" text="Bandeja de entrada:">
                <padding>
                   <Insets left="25.0" right="23.0" top="5.0" />

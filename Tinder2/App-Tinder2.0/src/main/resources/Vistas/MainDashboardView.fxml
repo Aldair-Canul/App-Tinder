@@ -50,7 +50,7 @@
 
     <!-- ==================== ÁREA DE PERFILES ==================== -->
     <center>
-        <ScrollPane fx:id="scrollPerfiles" fitToWidth="true" hbarPolicy="NEVER" pannable="true" prefHeight="200.0" prefWidth="200.0" style="-fx-background: #FAFAFA;                          -fx-background-color: #FAFAFA;" BorderPane.alignment="TOP_CENTER">
+        <ScrollPane fx:id="scrollPerfiles" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" prefHeight="200.0" prefWidth="200.0" style="-fx-background: #FAFAFA;                          -fx-background-color: #FAFAFA;" BorderPane.alignment="TOP_CENTER">
 
             <content>
 
@@ -85,16 +85,48 @@
                                             </image>
                                         </ImageView>
 
-                                        <Label fx:id="lblNombrePerfilEjemplo" style="-fx-text-fill: #C93664;                                             -fx-font-size: 20px;                                             -fx-font-weight: bold;" text="Sexybyte, 22" />
+                                        <Label fx:id="lblNombrePerfilEjemplo" style="-fx-text-fill: #C93664;                                             -fx-font-size: 20px;                                             -fx-font-weight: bold;" text="Sexybyte Cabrera, 22" />
 
                                         <Label fx:id="lblInteresesPerfilEjemplo" style="-fx-text-fill: #6B7280;                                             -fx-font-size: 13px;" text="🎵 Música • 🎬 Series • ☕ Café" />
 
                                         <Label fx:id="lblDistanciaPerfilEjemplo" style="-fx-text-fill: #6B7280;                                             -fx-font-size: 13px;" text="📍 A 3 km de ti 😈" />
 
-                                        <Button fx:id="btnVerPerfilEjemplo" mnemonicParsing="false" prefHeight="42.0" prefWidth="220.0" style="-fx-background-color: #FF5C8A;                                              -fx-text-fill: white;                                              -fx-font-weight: bold;                                              -fx-background-radius: 8;                                              -fx-cursor: hand;                                              -fx-font-size: 14px;" text="Ver perfil 👀" />
+                                        <Button fx:id="btnVerPerfilEjemplo" mnemonicParsing="false" onAction="#irAContacto" prefHeight="42.0" prefWidth="220.0" style="-fx-background-color: #FF5C8A;                                              -fx-text-fill: white;                                              -fx-font-weight: bold;                                              -fx-background-radius: 8;                                              -fx-cursor: hand;                                              -fx-font-size: 14px;" text="Contactar 💌" />
 
                                     </children>
                                 </VBox>
+                        <VBox fx:id="tarjetaPerfilEjemplo2" alignment="TOP_CENTER" prefHeight="410.0" prefWidth="260.0" spacing="10.0" style="-fx-background-color: white;                                      -fx-background-radius: 16;                                      -fx-border-radius: 16;                                      -fx-border-color: #F1D5DD;                                      -fx-border-width: 1;">
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                           <children>
+                              <ImageView fx:id="imgPerfilEjemplo1" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" smooth="true">
+                                 <image>
+                                    <Image url="@../Imagenes/ricarda.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="lblNombrePerfilEjemplo1" style="-fx-text-fill: #C93664;                                             -fx-font-size: 20px;                                             -fx-font-weight: bold;" text="Ricarda Castillo, 25" />
+                              <Label fx:id="lblInteresesPerfilEjemplo1" style="-fx-text-fill: #6B7280;                                             -fx-font-size: 13px;" text="🎤 Karaoke • 🎬 Peliculas • 🐵 Animales" />
+                              <Label fx:id="lblDistanciaPerfilEjemplo1" style="-fx-text-fill: #6B7280;                                             -fx-font-size: 13px;" text="📍 A 2.5 km de ti 😈" />
+                              <Button fx:id="btnVerPerfilEjemplo1" mnemonicParsing="false" onAction="#irAContacto" prefHeight="42.0" prefWidth="220.0" style="-fx-background-color: #FF5C8A;                                              -fx-text-fill: white;                                              -fx-font-weight: bold;                                              -fx-background-radius: 8;                                              -fx-cursor: hand;                                              -fx-font-size: 14px;" text="Contactar 💌" />
+                           </children>
+                        </VBox>
+                        <VBox fx:id="tarjetaPerfilEjemplo3" alignment="TOP_CENTER" prefHeight="410.0" prefWidth="260.0" spacing="10.0" style="-fx-background-color: white;                                      -fx-background-radius: 16;                                      -fx-border-radius: 16;                                      -fx-border-color: #F1D5DD;                                      -fx-border-width: 1;">
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                           <children>
+                              <ImageView fx:id="imgPerfilEjemplo2" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" smooth="true">
+                                 <image>
+                                    <Image url="@../Imagenes/leom.jpeg" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="lblNombrePerfilEjemplo2" style="-fx-text-fill: #C93664;                                             -fx-font-size: 20px;                                             -fx-font-weight: bold;" text="Leo Mentes, 40" />
+                              <Label fx:id="lblInteresesPerfilEjemplo2" style="-fx-text-fill: #6B7280;                                             -fx-font-size: 13px;" text="⚽ Futbol • 🎮 Gaming • 👁 Anime" />
+                              <Label fx:id="lblDistanciaPerfilEjemplo2" style="-fx-text-fill: #6B7280;                                             -fx-font-size: 13px;" text="📍 A 1 km de ti 😈" />
+                              <Button fx:id="btnVerPerfilEjemplo2" mnemonicParsing="false" onAction="#irAContacto" prefHeight="42.0" prefWidth="220.0" style="-fx-background-color: #FF5C8A;                                              -fx-text-fill: white;                                              -fx-font-weight: bold;                                              -fx-background-radius: 8;                                              -fx-cursor: hand;                                              -fx-font-size: 14px;" text="Contactar 💌" />
+                           </children>
+                        </VBox>
 
                             </children>
                         </FlowPane>
@@ -119,7 +151,7 @@
 
                 <Button fx:id="btnBandeja" mnemonicParsing="false" onAction="#irABandeja" prefHeight="36.0" prefWidth="100.0" style="-fx-background-color: white;                            -fx-text-fill: #C93664;                            -fx-font-size: 13px;                            -fx-font-weight: bold;                            -fx-background-radius: 8;                            -fx-cursor: hand;" text="Bandeja" />
 
-                <Button fx:id="btnMiPerfil" mnemonicParsing="false" prefHeight="36.0" prefWidth="100.0" style="-fx-background-color: white;                            -fx-text-fill: #C93664;                            -fx-font-size: 13px;                            -fx-font-weight: bold;                            -fx-background-radius: 8;                            -fx-cursor: hand;" text="Mi perfil" />
+                <Button fx:id="btnMiPerfil" mnemonicParsing="false" onAction="#irAmiperfil" prefHeight="36.0" prefWidth="100.0" style="-fx-background-color: white;                            -fx-text-fill: #C93664;                            -fx-font-size: 13px;                            -fx-font-weight: bold;                            -fx-background-radius: 8;                            -fx-cursor: hand;" text="Mi perfil" />
 
             </children>
         </HBox>
