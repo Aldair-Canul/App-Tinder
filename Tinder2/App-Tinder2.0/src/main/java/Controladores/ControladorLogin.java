@@ -20,7 +20,6 @@ public class ControladorLogin {
 
     // ==================== CAMPOS FXML ====================
 
-    @FXML private TextField txtUsuario;
     @FXML private TextField txtCorreo;
     @FXML private PasswordField pwdContraseña;
 
@@ -34,8 +33,8 @@ public class ControladorLogin {
 
     @FXML
     private void iniciarSesion(ActionEvent event) throws IOException {
-        if (txtUsuario.getText().isEmpty() || pwdContraseña.getText().isEmpty()) {
-            alertError("Usuario y contraseña son obligatorios.");
+        if (txtCorreo.getText().isEmpty() || pwdContraseña.getText().isEmpty()) {
+            alertError("Correo y contraseña son obligatorios.");
             return;
         }
 
