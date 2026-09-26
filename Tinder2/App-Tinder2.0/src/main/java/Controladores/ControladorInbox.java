@@ -6,6 +6,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.VBox;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import java.io.IOException;
 
 public class ControladorInbox {
 
@@ -47,5 +54,16 @@ public class ControladorInbox {
         vboxContacto.setVisible(false);
         txtMensaje.clear();
         System.out.println("Solicitud rechazada.");
+    }
+
+    @FXML
+    private void volverDashboard(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(
+                getClass().getResource("/Vistas/MainDashboardView.fxml")
+        );
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 }
