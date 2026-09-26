@@ -6,7 +6,7 @@ public class Persona1 {
 
     // ==================== ATRIBUTOS ====================
 
-    private String nombre;             
+    private String nombre;
     private String apellidos;
     private String correo;
     private int edad;

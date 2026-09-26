@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.regex.Pattern;
 
 public class ControladorRegistro {
 
@@ -25,6 +26,12 @@ public class ControladorRegistro {
     @FXML private PasswordField pwdContraseña;
     @FXML private PasswordField pwdConfirmar;
     @FXML private CheckBox chkTerminos;
+
+
+    // ==================== PATRÓN DE VALIDACIÓN ====================
+    //(mínimo 2 letras en la extensión)
+    private static final Pattern PATRON_CORREO =
+            Pattern.compile("^[\\w.+-]+@[\\w-]+\\.[a-zA-Z]{2,}$");
 
 
     // ==================== INICIALIZACIÓN ====================
@@ -57,6 +64,12 @@ public class ControladorRegistro {
         // --- Validación: correo ---
         if (txtCorreo.getText().isEmpty()) {
             alertError("El correo es obligatorio.");
+            return;
+        }
+
+        // --- Validación: formato de correo válido ---
+        if (!PATRON_CORREO.matcher(txtCorreo.getText()).matches()) {
+            alertError("Ingresa un correo electrónico válido (ejemplo: usuario@dominio.com).");
             return;
         }
 
