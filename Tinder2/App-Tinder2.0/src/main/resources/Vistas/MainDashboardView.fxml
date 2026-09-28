@@ -95,7 +95,7 @@
 
                                     </children>
                                 </VBox>
-                        <VBox fx:id="tarjetaPerfilEjemplo2" alignment="TOP_CENTER" prefHeight="410.0" prefWidth="260.0" spacing="10.0" style="-fx-background-color: white;                                      -fx-background-radius: 16;                                      -fx-border-radius: 16;                                      -fx-border-color: #F1D5DD;                                      -fx-border-width: 1;">
+                        <VBox fx:id="tarjetaPerfil2" alignment="TOP_CENTER" prefHeight="410.0" prefWidth="260.0" spacing="10.0" style="-fx-background-color: white;                                      -fx-background-radius: 16;                                      -fx-border-radius: 16;                                      -fx-border-color: #F1D5DD;                                      -fx-border-width: 1;">
                            <padding>
                               <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                            </padding>
@@ -111,7 +111,7 @@
                               <Button fx:id="btnVerPerfilEjemplo1" mnemonicParsing="false" onAction="#irAContacto" prefHeight="42.0" prefWidth="220.0" style="-fx-background-color: #FF5C8A;                                              -fx-text-fill: white;                                              -fx-font-weight: bold;                                              -fx-background-radius: 8;                                              -fx-cursor: hand;                                              -fx-font-size: 14px;" text="Contactar 💌" />
                            </children>
                         </VBox>
-                        <VBox fx:id="tarjetaPerfilEjemplo3" alignment="TOP_CENTER" prefHeight="410.0" prefWidth="260.0" spacing="10.0" style="-fx-background-color: white;                                      -fx-background-radius: 16;                                      -fx-border-radius: 16;                                      -fx-border-color: #F1D5DD;                                      -fx-border-width: 1;">
+                        <VBox fx:id="tarjetaPerfil3" alignment="TOP_CENTER" prefHeight="410.0" prefWidth="260.0" spacing="10.0" style="-fx-background-color: white;                                      -fx-background-radius: 16;                                      -fx-border-radius: 16;                                      -fx-border-color: #F1D5DD;                                      -fx-border-width: 1;">
                            <padding>
                               <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                            </padding>
